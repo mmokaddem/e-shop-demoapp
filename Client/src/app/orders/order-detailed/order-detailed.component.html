@@ -1,0 +1,19 @@
+<ng-container *ngIf="order">
+  <div class="container">
+    <div class="column">
+      <app-basket-summary
+        [items]="order.orderItems"
+        [isBasket]="false"
+        [isOrder]="true"
+      >
+      </app-basket-summary>
+    </div>
+    <div class="column order-summary">
+      <app-order-totals
+        [shippingPrice]="order.shippingPrice"
+        [subtotal]="order.subtotal"
+        [total]="order.total"
+      ></app-order-totals>
+    </div>
+  </div>
+</ng-container>

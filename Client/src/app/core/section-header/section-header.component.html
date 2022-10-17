@@ -1,0 +1,13 @@
+<ng-container *ngIf="breadcrumb$ | async as breadcrumbs">
+  <section
+    *ngIf="
+      breadcrumbs.length > 0 &&
+      breadcrumbs[breadcrumbs.length - 1].label !== 'Home'
+    "
+    class="section-header"
+  >
+    <div class="container">
+      <xng-breadcrumb></xng-breadcrumb>
+    </div>
+  </section>
+</ng-container>

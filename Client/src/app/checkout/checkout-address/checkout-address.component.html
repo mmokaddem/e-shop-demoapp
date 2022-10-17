@@ -1,0 +1,62 @@
+<div class="card address-card">
+  <div class="card-header">
+    <h2 class="card-title">Shipping Adress</h2>
+    <button
+      class="btn btn-outline-primary"
+      (click)="saveUserAddress()"
+      [disabled]="!checkoutForm.get('addressForm').dirty"
+    >
+      Save as default address
+    </button>
+  </div>
+  <div class="card-body">
+    <div [formGroup]="checkoutForm">
+      <div class="address-form" formGroupName="addressForm">
+        <div class="firstName">
+          <app-text-input
+            [placeholder]="'Firstname *'"
+            formControlName="firstName"
+          ></app-text-input>
+        </div>
+        <div class="lastName">
+          <app-text-input
+            [placeholder]="'Lastname *'"
+            formControlName="lastName"
+          ></app-text-input>
+        </div>
+        <div class="street">
+          <app-text-input
+            [placeholder]="'Street *'"
+            formControlName="street"
+          ></app-text-input>
+        </div>
+        <div class="city">
+          <app-text-input
+            [placeholder]="'City *'"
+            formControlName="city"
+          ></app-text-input>
+        </div>
+        <div class="state">
+          <app-text-input
+            [placeholder]="'State *'"
+            formControlName="state"
+          ></app-text-input>
+        </div>
+        <div class="zipCode">
+          <app-text-input
+            [placeholder]="'Zip Code *'"
+            formControlName="zipCode"
+          ></app-text-input>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-secondary" [routerLink]="['/basket']">
+      <i class="fa fa-angle-left"></i> Back to Basket
+    </button>
+    <button class="btn btn-primary" cdkStepperNext>
+      Go to Delivery <i class="fa fa-angle-right"></i>
+    </button>
+  </div>
+</div>

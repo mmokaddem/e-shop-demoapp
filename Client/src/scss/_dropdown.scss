@@ -1,0 +1,37 @@
+.dropdown {
+  position: relative;
+
+  &-toggle {
+    &:hover {
+      cursor: pointer;
+    }
+
+    strong {
+      margin: 0 0.5rem;
+    }
+  }
+
+  &-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+
+    &:not(.visible) {
+      display: none;
+    }
+
+    .dropdown-item {
+      a {
+        display: block;
+        white-space: nowrap;
+        padding: 0.5rem 1rem;
+
+        i {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+}

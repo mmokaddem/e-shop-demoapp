@@ -1,0 +1,27 @@
+.stepper-wrapper {
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    &-item {
+      width: 100%;
+
+      button {
+        width: 100%;
+        height: 100% !important;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        font-weight: 500;
+        padding: 0.5rem 0.5rem;
+        color: #333;
+        background-color: #eee;
+
+        &.active {
+          background-color: var(--primary-color);
+          color: #fff;
+        }
+      }
+    }
+  }
+}

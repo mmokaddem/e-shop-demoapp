@@ -1,0 +1,29 @@
+.address-card {
+  .card-header {
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (min-width: 400px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .card-body {
+    .address-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      @media only screen and (min-width: 540px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}

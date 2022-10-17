@@ -1,0 +1,30 @@
+<div class="product">
+  <div class="product-image" routerLink="/shop/{{ product.id }}">
+    <img src="{{ product.pictureUrl }}" alt="{{ product.name }}" />
+  </div>
+  <div class="product-infos">
+    <div class="product-brand">
+      <span>{{ product.brand }}</span>
+    </div>
+    <div class="product-name">
+      <a routerLink="/shop/{{ product.id }}">{{ product.name }}</a>
+    </div>
+    <div class="product-price">
+      <span>{{ product.price | currency }}</span>
+    </div>
+  </div>
+  <div class="product-buttons">
+    <button
+      class="btn btn-icon btn-outline-primary"
+      (click)="addItemToBasket()"
+    >
+      <i class="fa-solid fa-cart-plus"></i>
+    </button>
+    <button
+      class="btn btn-outline-secondary"
+      routerLink="/shop/{{ product.id }}"
+    >
+      View
+    </button>
+  </div>
+</div>

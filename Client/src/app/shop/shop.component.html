@@ -1,0 +1,171 @@
+<div class="shop">
+  <div id="mobileFilterMenu" class="shop-mobile-filter">
+    <ng-container *ngIf="categories && brands">
+      <div class="filter-wrapper">
+        <div class="filter-content">
+          <div class="card filter-card">
+            <div class="card-header">
+              <span class="card-title">Categories</span>
+            </div>
+            <div class="card-body">
+              <ul class="category-list">
+                <li
+                  *ngFor="let category of categories"
+                  [class.active]="category.id === this.shopParams.categoryId"
+                  [value]="category.id"
+                  (click)="saveCategorySelected($event)"
+                >
+                  <i *ngIf="category.icon" [class]="category.icon"></i>
+                  <span>{{ category.name }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card filter-card">
+            <div class="card-header">
+              <span class="card-title">Brands</span>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li *ngFor="let brand of brands">
+                  <div class="input-group-checkbox">
+                    <input
+                      type="checkbox"
+                      name="brand-{{ brand.id }}"
+                      id="brand-{{ brand.id }}"
+                      value="{{ brand.id }}"
+                      (change)="saveBrandSelected($event)"
+                    />
+                    <label for="brand-{{ brand.id }}">{{ brand.name }}</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="filter-buttons">
+          <button class="btn btn-secondary" (click)="closeMobileFilterMenu()">
+            Cancel
+          </button>
+          <button class="btn btn-primary" (click)="onApplyFilter()">
+            Apply
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="container">
+    <ng-container *ngIf="categories && brands">
+      <div class="shop-filter">
+        <div class="card filter-card">
+          <div class="card-header">
+            <span class="card-title">Categories</span>
+          </div>
+          <div class="card-body">
+            <ul class="category-list">
+              <li
+                *ngFor="let category of categories"
+                [class.active]="category.id === this.shopParams.categoryId"
+                [value]="category.id"
+                (click)="onCategorySelected(category.id)"
+              >
+                <i *ngIf="category.icon" [class]="category.icon"></i>
+                <span>{{ category.name }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card filter-card">
+          <div class="card-header">
+            <span class="card-title">Brands</span>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li *ngFor="let brand of brands">
+                <div class="input-group-checkbox">
+                  <input
+                    type="checkbox"
+                    name="brand-{{ brand.id }}"
+                    id="brand-{{ brand.id }}"
+                    (change)="onBrandSelected(brand.id)"
+                  />
+                  <label for="brand-{{ brand.id }}">{{ brand.name }}</label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="products">
+      <div class="shop-content">
+        <div class="shop-content-mobile-filter">
+          <button
+            id="mobileFilterToggler"
+            class="btn btn-primary"
+            (click)="openMobileFilterMenu()"
+          >
+            <i class="fa-solid fa-filter"></i> Filter
+          </button>
+        </div>
+        <div class="shop-content-header">
+          <div class="sorting-div">
+            <span>Sort</span>
+            <select
+              class="sort-select"
+              (change)="onSortSelected($event.target.value)"
+            >
+              <option *ngFor="let sort of sortOptions" [value]="sort.value">
+                {{ sort.name }}
+              </option>
+            </select>
+          </div>
+          <div class="search-group">
+            <input
+              type="text"
+              #search
+              placeholder="Search for a product..."
+              (keyup.enter)="onSearch()"
+            />
+            <div class="search-group-buttons">
+              <button class="btn btn-outline-primary" (click)="onSearch()">
+                Search
+              </button>
+              <button class="btn btn-outline-secondary" (click)="onReset()">
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="shop-content-body">
+          <ng-container *ngIf="products?.length === 0">
+            <div class="empty">
+              <div>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h4>There are no products found.</h4>
+              </div>
+              <p>Please update your filter criteria.</p>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="products?.length > 0">
+            <ul class="products-list">
+              <li *ngFor="let product of products">
+                <app-product-item [product]="product"></app-product-item>
+              </li>
+            </ul>
+          </ng-container>
+        </div>
+        <div class="shop-content-footer">
+          <button
+            class="btn btn-secondary"
+            [disabled]="products?.length === totalCount"
+            (click)="onShowMoreClicked()"
+          >
+            Show more
+          </button>
+        </div>
+      </div></ng-container
+    >
+  </div>
+</div>

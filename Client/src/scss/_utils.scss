@@ -1,0 +1,73 @@
+.container {
+  padding: 1rem 1.5rem;
+  margin: 0 auto;
+  max-width: 1344px;
+}
+
+.logo {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.text-danger {
+  color: var(--danger-color);
+}
+
+.text-green {
+  color: var(--green-color);
+}
+
+.toast-top-right {
+  top: calc(var(--nav-bar-height) + 10px);
+}
+
+.link {
+  text-decoration: underline;
+}
+
+.row {
+  margin-bottom: 0.5rem;
+}
+
+.no-overflow {
+  overflow: hidden;
+}
+
+.ngx-toastr {
+  max-width: 250px !important;
+
+  @media only screen and (min-width: 450px) {
+    max-width: unset !important;
+  }
+}
+
+.product-brand {
+  font-size: 0.8rem;
+}
+
+.product-name {
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.product-price {
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  padding: 1rem;
+
+  i {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+  }
+}

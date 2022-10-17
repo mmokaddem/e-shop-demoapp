@@ -1,0 +1,135 @@
+.carousel {
+  position: relative;
+  background-color: #eee;
+  height: 400px;
+  overflow: hidden;
+
+  & ul {
+    position: relative;
+    height: 100%;
+
+    & .carousel-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      align-items: center;
+      background: url(../../assets/images/slide-bg.webp) no-repeat center center /
+        cover;
+      opacity: 0;
+      transition: opacity 0.3s;
+
+      &.active {
+        opacity: 1;
+      }
+
+      .description {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        max-width: 400px;
+
+        .subtext-1 {
+          font-size: 3.2rem;
+          text-transform: uppercase;
+          font-weight: 300;
+          line-height: 1;
+          margin-bottom: 1rem;
+          letter-spacing: 2px;
+
+          @media only screen and(max-width: 425px) {
+            font-size: 1.3rem;
+          }
+
+          @media only screen and(max-width: 768px) and (min-width: 426px) {
+            font-size: 1.8rem;
+          }
+        }
+
+        .subtext-2 {
+          font-size: 1.4rem;
+          font-weight: 600;
+          line-height: 1.2;
+          text-transform: uppercase;
+
+          @media only screen and(max-width: 425px) {
+            font-size: 0.9rem;
+          }
+
+          @media only screen and(max-width: 768px) and (min-width: 426px) {
+            font-size: 1.1rem;
+          }
+        }
+
+        .subtext-price {
+          font-size: 2.6rem;
+          font-weight: 800;
+
+          @media only screen and(max-width: 425px) {
+            font-size: 1.2rem;
+          }
+
+          @media only screen and(max-width: 768px) and (min-width: 426px) {
+            font-size: 1.8rem;
+          }
+        }
+
+        .btn-primary {
+          min-width: 150px;
+          padding: 0.75rem 1.25rem;
+          font-size: 1rem;
+          font-weight: 500;
+          margin-top: 1rem;
+
+          @media only screen and(max-width: 425px) {
+            font-size: 0.9rem;
+            min-width: 125px;
+          }
+        }
+      }
+
+      .image {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 100px;
+      }
+    }
+  }
+
+  &-buttons {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    .carousel-btn {
+      border-radius: 50%;
+      background-color: #888585;
+      border: none;
+      width: 10px;
+      height: 10px;
+      min-height: auto;
+      padding: 0;
+      transition: transform 0.3s;
+
+      &.active {
+        background-color: var(--primary-color);
+        transform: scale(1.6);
+      }
+    }
+  }
+}

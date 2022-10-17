@@ -1,0 +1,98 @@
+[
+  {
+    "Brand": "SAMSUNG",
+    "ModelName": "Galaxy Tab S7+ WiFi",
+    "RAM": "256 GB",
+    "ScreenSize": "12.4",
+    "Price": 979,
+    "Discount": 10
+  },
+  {
+    "Brand": "SAMSUNG",
+    "ModelName": "TAB S7 FE 5G",
+    "RAM": "64 GB",
+    "ScreenSize": "12.4",
+    "Price": 589.99,
+    "Discount": 0
+  },
+  {
+    "Brand": "SAMSUNG",
+    "ModelName": "GALAXY TAB A8 WiFi",
+    "RAM": "32 GB",
+    "ScreenSize": "10.5",
+    "Price": 209.99,
+    "Discount": 0
+  },
+  {
+    "Brand": "LENOVO",
+    "ModelName": "Tab P11",
+    "RAM": "128 GB",
+    "ScreenSize": "11",
+    "Price": 299,
+    "Discount": 0
+  },
+  {
+    "Brand": "LENOVO",
+    "ModelName": "Tab M10 FHD Plus",
+    "RAM": "64 GB",
+    "ScreenSize": "10.3",
+    "Price": 199,
+    "Discount": 10
+  },
+  {
+    "Brand": "LENOVO",
+    "ModelName": "Tab M10 HD (2. Generation)",
+    "RAM": "32 GB",
+    "ScreenSize": "10.1",
+    "Price": 149,
+    "Discount": 0
+  },
+  {
+    "Brand": "AMAZON",
+    "ModelName": "Fire HD 8-Tablet",
+    "RAM": "32 GB",
+    "ScreenSize": "8",
+    "Price": 99.99,
+    "Discount": 0
+  },
+  {
+    "Brand": "AMAZON",
+    "ModelName": "Fire 7",
+    "RAM": "32 GB",
+    "ScreenSize": "7",
+    "Price": 75.99,
+    "Discount": 0
+  },
+  {
+    "Brand": "AMAZON",
+    "ModelName": "Fire 7 Kids",
+    "RAM": "16 GB",
+    "ScreenSize": "7",
+    "Price": 109.99,
+    "Discount": 0
+  },
+  {
+    "Brand": "HUAWEI",
+    "ModelName": "MATEPAD T 10S AGS3K-W19D",
+    "RAM": "64 GB",
+    "ScreenSize": "10.1",
+    "Price": 219,
+    "Discount": 25
+  },
+  {
+    "Brand": "HUAWEI",
+    "ModelName": "MatePad Wi-Fi 6",
+    "RAM": "64 GB",
+    "ScreenSize": "10.4",
+    "Price": 319,
+    "Discount": 23
+  },
+  {
+    "Brand": "HUAWEI",
+    "ModelName": "MatePad T10s",
+    "RAM": "128 GB",
+    "ScreenSize": "10.1",
+    "Price": 249,
+    "Discount": 28
+  }
+]

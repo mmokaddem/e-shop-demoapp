@@ -1,0 +1,50 @@
+[
+  {
+    "Name": "Laptops",
+    "Icon": "fa-solid fa-laptop"
+  },
+  {
+    "Name": "Tablets",
+    "Icon": "fa-solid fa-tablet-screen-button"
+  },
+  {
+    "Name": "PCs",
+    "Icon": "fa-solid fa-computer"
+  },
+  {
+    "Name": "Monitors",
+    "Icon": "fa-solid fa-display"
+  },
+  {
+    "Name": "Printers",
+    "Icon": "fa-solid fa-print"
+  },
+  {
+    "Name": "Smartphones",
+    "Icon": "fa-solid fa-mobile"
+  },
+  {
+    "Name": "Smartwatches",
+    "Icon": "fa-solid fa-clock"
+  },
+  {
+    "Name": "TVs",
+    "Icon": "fa-solid fa-tv"
+  },
+  {
+    "Name": "Soundbars",
+    "Icon": "fa-solid fa-volume-high"
+  },
+  {
+    "Name": "Home Cinema",
+    "Icon": "fa-solid fa-film"
+  },
+  {
+    "Name": "Audio",
+    "Icon": "fa-solid fa-headphones-simple"
+  },
+  {
+    "Name": "Cameras",
+    "Icon": "fa-solid fa-camera"
+  }
+]

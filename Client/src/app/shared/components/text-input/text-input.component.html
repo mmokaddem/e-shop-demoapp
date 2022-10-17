@@ -1,0 +1,46 @@
+<div class="input-group">
+  <label *ngIf="label" class="input-group-label" for="{{ label }}"
+    >{{ label }} {{ required ? "*" : "" }}</label
+  >
+  <div class="input-wrapper">
+    <input
+      id="{{ label }}"
+      [ngClass]="
+        controlDir?.control?.touched
+          ? !controlDir.control.valid
+            ? 'is-invalid'
+            : 'is-valid'
+          : null
+      "
+      [type]="type"
+      placeholder="{{ placeholder }}"
+      (input)="onChange($any($event.target).value)"
+      (blur)="onTouched()"
+      #input
+    />
+    <i
+      *ngIf="controlDir?.control?.status === 'PENDING'"
+      class="fa-solid fa-spinner fa-spin loader"
+    ></i>
+  </div>
+  <ng-container
+    *ngIf="!controlDir?.control?.valid && controlDir?.control?.touched"
+  >
+    <span class="invalid-feedback" *ngIf="controlDir?.control?.errors?.required"
+      >{{ label ?? placeholder }} is required</span
+    >
+    <span class="invalid-feedback" *ngIf="controlDir?.control?.errors?.pattern"
+      >Invalid email address</span
+    >
+  </ng-container>
+
+  <ng-container
+    *ngIf="!controlDir?.control?.valid && controlDir?.control?.dirty"
+  >
+    <span
+      class="invalid-feedback"
+      *ngIf="controlDir?.control?.errors?.emailExists"
+      >Email address is in use</span
+    >
+  </ng-container>
+</div>

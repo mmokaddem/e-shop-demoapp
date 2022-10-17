@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-wrapper {
+  max-width: 400px;
+}
+
+.p-welcome {
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  button {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+.p-2 {
+  font-size: 0.9rem;
+  text-align: center;
+
+  .link {
+    font-weight: 500;
+  }
+}

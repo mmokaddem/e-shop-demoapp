@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="wrapper">
+    <div>
+      <i class="fa-solid fa-check-circle"></i>
+      <h3>Your order is confirmed.</h3>
+    </div>
+    <p>
+      Your order has not been shipped yet, but this is to be expected as we are
+      not a real store!
+    </p>
+    <button
+      *ngIf="order"
+      class="btn btn-primary"
+      routerLink="/orders/{{ order?.id }}"
+    >
+      View your order
+    </button>
+    <button *ngIf="!order" class="btn btn-primary" routerLink="/orders">
+      View your orders
+    </button>
+  </div>
+</div>

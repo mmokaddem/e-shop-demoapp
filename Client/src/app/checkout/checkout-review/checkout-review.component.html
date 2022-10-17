@@ -1,0 +1,19 @@
+<div class="card review-card">
+  <div class="card-header">
+    <span class="card-title">Review your order</span>
+  </div>
+  <div class="card-body">
+    <app-basket-summary
+      [isBasket]="false"
+      [items]="(basket$ | async).items"
+    ></app-basket-summary>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-secondary" cdkStepperPrevious>
+      <i class="fa fa-angle-left"></i> Back to Delivery
+    </button>
+    <button class="btn btn-primary" (click)="createPaymentIntent()">
+      Go to Payment <i class="fa fa-angle-right"></i>
+    </button>
+  </div>
+</div>

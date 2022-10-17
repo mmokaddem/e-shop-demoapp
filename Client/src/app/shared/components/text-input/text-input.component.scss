@@ -1,0 +1,25 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-wrapper {
+  position: relative;
+
+  .loader {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.is-invalid {
+  border: 1px solid var(--danger-color);
+}
+
+.invalid-feedback {
+  font-size: 0.8rem;
+  color: var(--danger-color);
+}

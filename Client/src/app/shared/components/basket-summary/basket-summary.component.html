@@ -1,0 +1,142 @@
+<ng-container *ngIf="items.length > 0">
+  <div class="mobile-view">
+    <ul class="items-list">
+      <li *ngFor="let item of items">
+        <div class="product">
+          <div
+            class="product-image"
+            routerLink="/shop/{{ item.id || item.productId }}"
+          >
+            <img src="{{ item.pictureUrl }}" alt="{{ item.productName }}" />
+          </div>
+
+          <div class="product-infos">
+            <div class="product-brand">
+              <span>{{ item.brand }}</span>
+            </div>
+            <div class="product-name">
+              <a routerLink="/shop/{{ item.id || item.productId }}">{{
+                item.productName
+              }}</a>
+            </div>
+          </div>
+          <div class="shipping">
+            <div>
+              <span>Price: </span>
+              <strong>{{ item.price | currency }}</strong>
+            </div>
+            <div class="shipping-quantity">
+              <span
+                >Quantity:
+                <span *ngIf="!isBasket">{{ item.quantity }}</span></span
+              >
+              <div
+                class="shipping-quantity-wrapper"
+                *ngIf="isBasket"
+                [class.bordered]="isBasket"
+              >
+                <span>{{ item.quantity }}</span>
+                <div class="buttons">
+                  <button
+                    class="btn btn-outline-secondary"
+                    *ngIf="isBasket"
+                    (click)="decrementItemQuantity(item)"
+                  >
+                    <i class="fa-solid fa-minus"></i>
+                  </button>
+                  <button
+                    class="btn btn-outline-secondary"
+                    *ngIf="isBasket"
+                    (click)="incrementItemQuantity(item)"
+                  >
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="shipping-total">
+              <span>Total: </span>
+              <strong>{{ item.price * item.quantity | currency }}</strong>
+            </div>
+            <button
+              *ngIf="isBasket"
+              class="btn btn-icon btn-outline-danger"
+              (click)="removeBasketItem(item)"
+            >
+              <i class="fa-regular fa-trash-alt"></i>
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th *ngIf="isBasket"></th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td *ngIf="isBasket">
+          <button
+            class="btn btn-icon btn-outline-danger"
+            (click)="removeBasketItem(item)"
+          >
+            <i class="fa-regular fa-trash-alt"></i>
+          </button>
+        </td>
+        <td>
+          <div class="product">
+            <div
+              class="product-image"
+              routerLink="/shop/{{ item.id || item.productId }}"
+            >
+              <img src="{{ item.pictureUrl }}" alt="{{ item.productName }}" />
+            </div>
+
+            <div>
+              <span class="product-brand">{{ item.brand }}</span>
+              <a
+                class="product-name"
+                routerLink="/shop/{{ item.id || item.productId }}"
+                >{{ item.productName }}</a
+              >
+            </div>
+          </div>
+        </td>
+        <td>
+          <strong>{{ item.price | currency }}</strong>
+        </td>
+        <td class="quantity">
+          <div class="quantity-wrapper" [class.bordered]="isBasket">
+            <span>{{ item.quantity }}</span>
+            <div class="buttons">
+              <button
+                class="btn btn-outline-secondary"
+                *ngIf="isBasket"
+                (click)="decrementItemQuantity(item)"
+              >
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <button
+                class="btn btn-outline-secondary"
+                *ngIf="isBasket"
+                (click)="incrementItemQuantity(item)"
+              >
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </td>
+        <td>
+          <strong>{{ item.price * item.quantity | currency }}</strong>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>

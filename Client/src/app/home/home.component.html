@@ -1,0 +1,43 @@
+<div class="carousel">
+  <ul>
+    <li class="carousel-item active">
+      <div class="description">
+        <span class="subtext-1">The new Smartphone</span>
+        <span class="subtext-2">Available under</span>
+        <span class="subtext-price">{{ 549.99 | currency }}</span>
+        <button class="btn btn-primary" routerLink="/shop">Shop now</button>
+      </div>
+      <div class="image">
+        <img src="../../assets/images/image-slide-1.webp" alt="image-slide-1" />
+      </div>
+    </li>
+    <li class="carousel-item">
+      <div class="description">
+        <span class="subtext-2">Sale Offer</span>
+        <span class="subtext-1"
+          >Smartwatches sales up to <strong>40% OFF</strong>
+        </span>
+        <button class="btn btn-primary" routerLink="/shop">Shop now</button>
+      </div>
+      <div class="image">
+        <img src="../../assets/images/image-slide-2.webp" alt="image-slide-2" />
+      </div>
+    </li>
+    <li class="carousel-item">
+      <div class="description">
+        <span class="subtext-1">Our new offer</span>
+        <span class="subtext-2">Now in our store starting from</span>
+        <span class="subtext-price">{{ 749.99 | currency }}</span>
+        <button class="btn btn-primary" routerLink="/shop">Shop now</button>
+      </div>
+      <div class="image">
+        <img src="../../assets/images/image-slide-3.webp" alt="image-slide-3" />
+      </div>
+    </li>
+  </ul>
+  <div class="carousel-buttons">
+    <button class="btn carousel-btn active" data-target="1"></button>
+    <button class="btn carousel-btn" data-target="2"></button>
+    <button class="btn carousel-btn" data-target="3"></button>
+  </div>
+</div>

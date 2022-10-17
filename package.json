@@ -1,0 +1,28 @@
+{
+  "name": "hitechshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "add-migration": "dotnet ef migrations add \"Initial Create\" -c StoreContext -o Data/Migrations",
+    "remove-migration": "dotnet ef migrations remove -c StoreContext",
+    "reset-migration": "npm run remove-migration & npm run add-migration",
+    "update-db": "dotnet ef database update -c StoreContext",
+    "remove-db": "dotnet ef database drop -c StoreContext",
+    "reset-db": "npm run remove-db & npm run remove-migration & npm run add-migration",
+    "remove-identity-db": "dotnet ef database drop -c AppIdentityDbContext",
+    "remove-identity-migration": "dotnet ef migrations remove -c AppIdentityDbContext",
+    "add-identity-migration": "dotnet ef migrations add \"Initial Create\" -c AppIdentityDbContext -o Identity/Migrations",
+    "reset-identity-db": "npm run remove-identity-db & npm run remove-identity-migration & npm run add-identity-migration"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MahmoudMkaddem/hitechshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MahmoudMkaddem/hitechshop/issues"
+  },
+  "homepage": "https://github.com/MahmoudMkaddem/hitechshop#readme"
+}

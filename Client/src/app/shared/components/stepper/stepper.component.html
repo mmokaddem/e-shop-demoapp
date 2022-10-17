@@ -1,0 +1,17 @@
+<div class="stepper-wrapper">
+  <ul class="nav">
+    <li class="nav-item" *ngFor="let step of steps; let i = index">
+      <button
+        class="btn"
+        (click)="onClick(i)"
+        [class.active]="selectedIndex === i"
+        [disabled]="selectedIndex < i"
+      >
+        {{ step.label }}
+      </button>
+    </li>
+  </ul>
+  <div>
+    <ng-container [ngTemplateOutlet]="selected.content"></ng-container>
+  </div>
+</div>

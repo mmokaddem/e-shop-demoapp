@@ -1,0 +1,38 @@
+<div class="container">
+  <div *ngIf="product" class="product-card">
+    <div class="card-header">
+      <span class="card-title"
+        >{{ product.brand }} {{ product.description }}</span
+      >
+    </div>
+    <div class="card-body">
+      <div class="product">
+        <div class="product-image">
+          <img [src]="product.pictureUrl" alt="{{ product.name }}" />
+        </div>
+
+        <div class="shipping-infos">
+          <div class="availability">
+            <div class="row online">
+              <div class="text-green">
+                <i class="fa-solid fa-circle"></i>
+                <span>Available online</span>
+              </div>
+              <div>
+                Delivery between {{ deliveryFrom }} - {{ deliveryUntil }}
+              </div>
+            </div>
+          </div>
+          <div class="price">
+            <strong>{{ product.price | currency }}</strong>
+          </div>
+          <div class="buttons">
+            <button class="btn btn-primary" (click)="addItemToBasket()">
+              <i class="fa-solid fa-cart-arrow-down"></i> Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

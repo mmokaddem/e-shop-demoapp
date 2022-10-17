@@ -1,0 +1,21 @@
+.card {
+  margin-bottom: 1rem;
+
+  &-header {
+    margin-bottom: 0.25rem;
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+  }
+
+  &-body {
+    padding: 0.5rem 0 1rem 0;
+  }
+
+  &-footer {
+    border-top: 1px solid #ddd;
+    padding: 1rem 0;
+  }
+}

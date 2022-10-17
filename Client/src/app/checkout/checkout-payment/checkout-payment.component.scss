@@ -1,0 +1,46 @@
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment-form {
+  display: grid;
+  grid-template-areas:
+    "nameOnCard nameOnCard"
+    "cardNumber cardNumber"
+    "cardExpiry cardExpiry"
+    "cardCvc cardCvc";
+  gap: 10px;
+
+  @media only screen and (min-width: 425px) {
+    grid-template-areas:
+      "nameOnCard nameOnCard"
+      "cardNumber cardNumber"
+      "cardExpiry cardCvc";
+  }
+
+  .nameOnCard {
+    grid-area: nameOnCard;
+  }
+
+  .cardNumber {
+    grid-area: cardNumber;
+  }
+
+  .cardExpiry {
+    grid-area: cardExpiry;
+  }
+
+  .cardCvc {
+    grid-area: cardCvc;
+  }
+}
+
+.StripeElement {
+  position: relative;
+  border: 1px solid #ddd;
+  outline: none;
+  background-color: #fff;
+  padding: 0.5rem 0.75rem;
+  font-family: inherit;
+}

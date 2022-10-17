@@ -1,0 +1,50 @@
+[
+  {
+    "Name": "MacBook Air (2020) MGN63D/A",
+    "Description": "APPLE MacBook Air (2020) MGN63D/A, Notebook mit 13,3 Zoll Display, Apple M1 Prozessor, 8 GB RAM, 256 GB SSD, M1 GPU, Space Grau",
+    "Price": 1129,
+    "PictureUrl": "images/products/3443_1.jpg",
+    "ProductCategoryId": 1,
+    "ProductBrandId": 1
+  },
+  {
+    "Name": "MacBook Air (2020) MGN93D/A",
+    "Description": "APPLE MacBook Air (2020) MGN93D/A, Notebook mit 13,3 Zoll Display, Apple M1 Prozessor, 8 GB RAM, 256 GB SSD, M1 GPU, Silber",
+    "Price": 1129,
+    "PictureUrl": "images/products/laptop-2.png",
+    "ProductCategoryId": 1,
+    "ProductBrandId": 1
+  },
+  {
+    "Name": "MacBook Air (2020) MGND3D/A",
+    "Description": "APPLE MacBook Air (2020) MGND3D/A, Notebook mit 13,3 Zoll Display, Apple M1 Prozessor, 8 GB RAM, 256 GB SSD, M1 GPU, Gold",
+    "Price": 1129,
+    "PictureUrl": "images/products/laptop-3.png",
+    "ProductCategoryId": 1,
+    "ProductBrandId": 1
+  },
+  {
+    "Name": "IdeaPad Flex 5i",
+    "Description": "LENOVO IdeaPad Flex 5i, Plus Chromebook mit 13,3 Zoll Display, Intel® Pentium® Gold Prozessor, 4 GB RAM, 64 GB eMMC, Intel UHD Grafik, Iron Grey",
+    "Price": 479,
+    "PictureUrl": "images/products/laptop-4.png",
+    "ProductCategoryId": 1,
+    "ProductBrandId": 2
+  },
+  {
+    "Name": "V15-IGL Pentium Silver N5030",
+    "Description": "LENOVO V15-IGL Pentium Silver N5030, Notebook mit 15,6 Zoll Display, Prozessor, 8 GB RAM, 1000 GB HDD, AMD Radeon Graphics, Grau",
+    "Price": 279,
+    "PictureUrl": "images/products/laptop-5.png",
+    "ProductCategoryId": 1,
+    "ProductBrandId": 2
+  },
+  {
+    "Name": "V15-ADA 3500U",
+    "Description": "LENOVO V15-ADA 3500U, Notebook mit 15,6 Zoll Display, Prozessor, 8 GB RAM, 256 GB SSD, AMD Radeon Graphics, Grau",
+    "Price": 349,
+    "PictureUrl": "images/products/laptop-6.png",
+    "ProductCategoryId": 1,
+    "ProductBrandId": 2
+  }
+]

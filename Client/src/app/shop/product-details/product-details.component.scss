@@ -1,0 +1,39 @@
+.product-card {
+  .card-body {
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    .product {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      @media only screen and (min-width: 650px) {
+        flex-direction: row;
+      }
+
+      &-image {
+        max-width: 160px;
+      }
+    }
+
+    .shipping-infos {
+      padding-left: 1rem;
+
+      @media only screen and (min-width: 650px) {
+        border-left: 1px solid #ddd;
+      }
+
+      .online {
+        i {
+          font-size: 0.8rem;
+          margin-right: 0.5rem;
+        }
+      }
+
+      .price {
+        font-size: 2rem;
+      }
+    }
+  }
+}

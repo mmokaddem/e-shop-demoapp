@@ -1,0 +1,11 @@
+.checkout-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2rem;
+
+  @media only screen and (min-width: 890px) {
+    display: grid;
+    grid-template-columns: minmax(500px, 1fr) auto;
+    gap: 2rem;
+  }
+}

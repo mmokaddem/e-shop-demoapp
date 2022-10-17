@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="register-wrapper">
+    <p class="p-welcome">
+      To create a new account, please enter the following informations.
+    </p>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <app-text-input
+        formControlName="firstName"
+        [label]="'Firstname'"
+        [required]="true"
+        class="text-input"
+      ></app-text-input>
+      <app-text-input
+        formControlName="lastName"
+        [label]="'Lastname'"
+        [required]="true"
+        class="text-input"
+      ></app-text-input>
+      <app-text-input
+        formControlName="email"
+        [label]="'Email'"
+        [required]="true"
+        class="text-input"
+      ></app-text-input>
+      <app-text-input
+        formControlName="password"
+        [label]="'Password'"
+        [type]="'password'"
+        [required]="true"
+        class="text-input"
+      ></app-text-input>
+
+      <ul class="errors text-danger" *ngIf="errors">
+        <li *ngFor="let error of errors">
+          {{ error }}
+        </li>
+      </ul>
+
+      <button class="btn btn-primary" type="submit">Register</button>
+
+      <p class="p-2">
+        Do you already have an accont?
+        <a routerLink="/account/login" class="link">Log in</a>
+      </p>
+    </form>
+  </div>
+</div>

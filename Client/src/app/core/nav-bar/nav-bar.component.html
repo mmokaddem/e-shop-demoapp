@@ -1,0 +1,77 @@
+<nav class="nav-bar">
+  <div class="container">
+    <div class="row row-1">
+      <a class="logo" routerLink="/">e-shop</a>
+    </div>
+    <div class="row row-2">
+      <ul class="navigation-menu">
+        <li>
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li><a routerLink="/shop" routerLinkActive="active">Shop</a></li>
+        <li>
+          <!-- <a routerLink="/test-error" routerLinkActive="active">Errors</a> -->
+        </li>
+      </ul>
+      <div class="user-menu">
+        <button class="btn btn-icon cart-btn" routerLink="/basket">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <div *ngIf="basket$ | async as basket" class="btn-counter">
+            {{ basket.items.length }}
+          </div>
+        </button>
+
+        <div class="dropdown" id="user-dropdown">
+          <button
+            class="btn btn-icon user-btn dropdown-toggle"
+            (click)="toggleUserDropdownMenu()"
+          >
+            <i class="fa-solid fa-user"></i>
+          </button>
+          <div class="dropdown-menu">
+            <ng-container *ngIf="(currentUser$ | async) === null">
+              <div class="buttons">
+                <button class="btn btn-primary" routerLink="/account/login">
+                  Login
+                </button>
+                <button
+                  class="btn btn-outline-secondary"
+                  routerLink="/account/register"
+                >
+                  Sign up
+                </button>
+              </div>
+            </ng-container>
+            <ng-container *ngIf="currentUser$ | async as user">
+              <span class="subtext-1"
+                >Welcome, {{ user.firstName | titlecase }}!</span
+              >
+              <ul>
+                <li class="dropdown-item">
+                  <a routerLink="/basket">
+                    <i class="fa-solid fa-cart-shopping"></i> View Basket
+                  </a>
+                </li>
+                <li class="dropdown-item">
+                  <a routerLink="orders"
+                    ><i class="fa-solid fa-history"></i> View Orders</a
+                  >
+                </li>
+                <li class="dropdown-item">
+                  <a routerLink="orders" (click)="logout()"
+                    ><i class="fa-solid fa-sign-out"></i> Logout</a
+                  >
+                </li>
+              </ul>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

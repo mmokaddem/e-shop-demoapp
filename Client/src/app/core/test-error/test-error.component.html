@@ -1,0 +1,23 @@
+<div class="container">
+  <ul class="buttons-list">
+    <li>
+      <button class="btn" (click)="get404Error()">Test 404 Error</button>
+    </li>
+    <li>
+      <button class="btn" (click)="get500Error()">Test 500 Error</button>
+    </li>
+    <li>
+      <button class="btn" (click)="get400Error()">Test 400 Error</button>
+    </li>
+    <li>
+      <button class="btn" (click)="get400ValidationError()">
+        Test 400 ValidationError
+      </button>
+      <div class="validation-errors" *ngIf="validationErrors">
+        <ul class="text-danger">
+          <li *ngFor="let error of validationErrors">{{ error }}</li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
