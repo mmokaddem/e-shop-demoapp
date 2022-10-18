@@ -10,12 +10,18 @@
   font-weight: 700;
 }
 
-.text-danger {
-  color: var(--danger-color);
-}
+.text {
+  &-danger {
+    color: var(--danger-color);
+  }
 
-.text-green {
-  color: var(--green-color);
+  &-green {
+    color: var(--green-color);
+  }
+
+  &-primary {
+    color: var(--primary-color);
+  }
 }
 
 .toast-top-right {
@@ -70,4 +76,8 @@
     font-size: 4rem;
     margin-bottom: 0.5rem;
   }
+}
+
+.bold {
+  font-weight: bold;
 }
