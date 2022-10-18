@@ -133,3 +133,45 @@
     }
   }
 }
+
+.services {
+  .items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    .item {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1rem;
+      background-color: #f5f5f5;
+      border-radius: 5rem;
+      padding: 0.5rem;
+
+      &-icon {
+        background-color: #fff;
+        color: var(--primary-color);
+        font-size: 2rem;
+        border-radius: 50%;
+        width: 4.4rem;
+        height: 4.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &-info {
+        .title {
+          display: block;
+          font-weight: 600;
+        }
+
+        .description {
+          font-size: 0.8rem;
+          color: #888;
+        }
+      }
+    }
+  }
+}
