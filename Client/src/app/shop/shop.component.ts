@@ -143,6 +143,7 @@ export class ShopComponent implements OnInit {
   openMobileFilterMenu() {
     const filterMenu = document.getElementById('mobileFilterMenu');
     filterMenu.style.transform = 'translateX(0)';
+    filterMenu.querySelector('.filter-content').scrollTop = 0;
 
     const body = document.querySelector('body');
     body.classList.add('no-overflow');
