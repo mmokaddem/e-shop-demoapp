@@ -22,6 +22,10 @@
   &-primary {
     color: var(--primary-color);
   }
+
+  &-center {
+    text-align: center;
+  }
 }
 
 .toast-top-right {
@@ -30,6 +34,10 @@
 
 .link {
   text-decoration: underline;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .row {
@@ -80,4 +88,18 @@
 
 .bold {
   font-weight: bold;
+}
+
+.overlay {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    z-index: 100;
+    opacity: 0.8;
+  }
 }
