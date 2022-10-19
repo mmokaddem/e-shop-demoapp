@@ -2,6 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BasketService } from 'src/app/basket/basket.service';
+import { SidebarCartService } from 'src/app/core/sidebar-cart/sidebar-cart.service';
 import { IProduct } from 'src/app/shared/models/product';
 import { BreadcrumbService } from 'xng-breadcrumb';
 import { ShopService } from '../shop.service';
@@ -27,7 +28,8 @@ export class ProductDetailsComponent implements OnInit {
     private shopService: ShopService,
     private activatedRoute: ActivatedRoute,
     private bcService: BreadcrumbService,
-    private basketService: BasketService
+    private basketService: BasketService,
+    private sidebarCartService: SidebarCartService
   ) {
     this.bcService.set('@productDetails', ' ');
   }
@@ -52,5 +54,6 @@ export class ProductDetailsComponent implements OnInit {
 
   addItemToBasket() {
     this.basketService.addItemToBasket(this.product);
+    this.sidebarCartService.openSidebarCart();
   }
 }
