@@ -9,6 +9,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { SectionHeaderComponent } from './section-header/section-header.component';
 import { BreadcrumbModule } from 'xng-breadcrumb';
 import { FooterComponent } from './footer/footer.component';
+import { SidebarCartComponent } from './sidebar-cart/sidebar-cart.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FooterComponent } from './footer/footer.component';
     ServerErrorComponent,
     SectionHeaderComponent,
     FooterComponent,
+    SidebarCartComponent,
   ],
   imports: [
     CommonModule,
@@ -28,6 +30,11 @@ import { FooterComponent } from './footer/footer.component';
       preventDuplicates: true,
     }),
   ],
-  exports: [NavBarComponent, SectionHeaderComponent, FooterComponent],
+  exports: [
+    NavBarComponent,
+    SectionHeaderComponent,
+    FooterComponent,
+    SidebarCartComponent,
+  ],
 })
 export class CoreModule {}

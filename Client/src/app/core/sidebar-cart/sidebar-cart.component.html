@@ -1,0 +1,57 @@
+<ng-container *ngIf="(basket$ | async) !== null">
+  <div id="sidebarCart" class="sidebar-cart">
+    <div class="sidebar-cart-header">
+      <button class="btn btn-transparent btn-icon" (click)="closeSidebarCart()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <span>My Cart</span>
+    </div>
+    <div class="sidebar-cart-body">
+      <ng-container *ngIf="(basket$ | async).items.length === 0">
+        <div class="text-center">Your cart is empty</div>
+      </ng-container>
+      <ng-container *ngIf="(basket$ | async).items.length > 0">
+        <div class="product" *ngFor="let item of (basket$ | async).items">
+          <div class="product-image link" routerLink="/shop/{{ item.id }}">
+            <img src="{{ item.pictureUrl }}" alt="{{ item.productName }}" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">
+              <a routerLink="/shop/{{ item.id }}">{{ item.productName }}</a>
+            </div>
+            <div class="product-quantity">Quantity: {{ item.quantity }}</div>
+            <div class="product-price">
+              Price: {{ item.price + item.quantity | currency }}
+            </div>
+            <div class="product-buttons">
+              <div
+                class="btn btn-outline-danger"
+                (click)="removeBasketItem(item)"
+              >
+                Remove
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <ng-container *ngIf="(basket$ | async).items.length > 0">
+      <div class="sidebar-cart-footer">
+        <ng-container *ngIf="basketTotals$ | async as basketTotals">
+          <div class="cart-total">
+            <span class="text">Cart total</span>
+            <span class="value">{{ basketTotals.subtotal | currency }}</span>
+          </div>
+          <div class="buttons">
+            <button class="btn btn-secondary" routerLink="/basket">
+              View Cart
+            </button>
+            <button class="btn btn-primary" routerLink="/checkout">
+              Checkout
+            </button>
+          </div>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+</ng-container>
