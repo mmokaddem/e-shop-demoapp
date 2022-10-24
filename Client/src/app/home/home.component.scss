@@ -188,3 +188,60 @@
     }
   }
 }
+
+// Section: New Products
+.new-products {
+  .section-header {
+    padding-bottom: 1rem;
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+  .section-body {
+    .products-list {
+      display: grid;
+      grid-auto-flow: column dense;
+      grid-auto-columns: 100%;
+      overflow: hidden;
+      gap: 1rem;
+
+      @media only screen and (min-width: 450px) {
+        grid-auto-columns: calc((100% - 1rem) / 2);
+      }
+
+      @media only screen and (min-width: 600px) {
+        grid-auto-columns: calc((100% - 1rem * 2) / 3);
+      }
+
+      @media only screen and (min-width: 850px) {
+        grid-auto-columns: calc((100% - 1rem * 3) / 4);
+      }
+
+      @media only screen and (min-width: 1000px) {
+        grid-auto-columns: calc((100% - 1rem * 4) / 5);
+      }
+
+      @media only screen and (min-width: 1150px) {
+        grid-auto-columns: calc((100% - 1rem * 4) / 5);
+      }
+
+      app-product-item {
+        transition: transform 0.2s ease;
+      }
+    }
+  }
+
+  .section-footer {
+    padding-top: 1rem;
+
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+    }
+  }
+}

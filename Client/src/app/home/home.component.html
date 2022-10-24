@@ -86,4 +86,40 @@
       </ul>
     </div>
   </section>
+
+  <!-- Section: New Products -->
+  <section class="new-products">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-title">New Products</span>
+      </div>
+      <div class="section-body">
+        <ul class="products-list">
+          <app-product-item
+            *ngFor="let product of products"
+            [product]="product"
+          ></app-product-item>
+        </ul>
+      </div>
+      <div class="section-footer">
+        <div class="buttons">
+          <button
+            id="previousButton"
+            class="btn btn-icon btn-outline-secondary"
+            (click)="translateList($event, 'previous')"
+            disabled
+          >
+            <i class="fa-solid fa-angle-left"></i>
+          </button>
+          <button
+            id="nextButton"
+            class="btn btn-icon btn-outline-secondary"
+            (click)="translateList($event, 'next')"
+          >
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>

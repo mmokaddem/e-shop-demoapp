@@ -7,6 +7,7 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
 import { StepperComponent } from './components/stepper/stepper.component';
 import { BasketSummaryComponent } from './components/basket-summary/basket-summary.component';
 import { RouterModule } from '@angular/router';
+import { ProductItemComponent } from './components/product-item/product-item.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { RouterModule } from '@angular/router';
     TextInputComponent,
     StepperComponent,
     BasketSummaryComponent,
+    ProductItemComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, CdkStepperModule, RouterModule],
   exports: [
@@ -23,6 +25,7 @@ import { RouterModule } from '@angular/router';
     CdkStepperModule,
     StepperComponent,
     BasketSummaryComponent,
+    ProductItemComponent,
   ],
 })
 export class SharedModule {}
