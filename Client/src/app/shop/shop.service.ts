@@ -27,6 +27,14 @@ export class ShopService {
       params = params.append('brandIds', shopParams.brandIds.join(', '));
     }
 
+    if (shopParams.minPrice) {
+      params = params.append('minPrice', shopParams.minPrice.toString());
+    }
+
+    if (shopParams.maxPrice) {
+      params = params.append('maxPrice', shopParams.maxPrice.toString());
+    }
+
     if (shopParams.search) {
       params = params.append('search', shopParams.search);
     }

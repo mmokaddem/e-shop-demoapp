@@ -42,6 +42,32 @@
               </ul>
             </div>
           </div>
+          <div class="card filter-card" id="price-filter">
+            <div class="card-header">
+              <span class="card-title">Price</span>
+            </div>
+            <div class="card-body">
+              <div>
+                <input
+                  name="minPrice"
+                  id="minPrice"
+                  placeholder="Min"
+                  (keydown)="onPriceKeyDown($event)"
+                  (focusout)="savePriceChanged($event, 'min')"
+                />
+              </div>
+              <div>-</div>
+              <div>
+                <input
+                  name="maxPrice"
+                  id="maxPrice"
+                  placeholder="Max"
+                  (keydown)="onPriceKeyDown($event)"
+                  (focusout)="savePriceChanged($event, 'max')"
+                />
+              </div>
+            </div>
+          </div>
         </div>
         <div class="filter-buttons">
           <button class="btn btn-secondary" (click)="closeMobileFilterMenu()">
@@ -94,6 +120,32 @@
                 </div>
               </li>
             </ul>
+          </div>
+        </div>
+        <div class="card filter-card" id="price-filter">
+          <div class="card-header">
+            <span class="card-title">Price</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <input
+                name="minPrice"
+                id="minPrice"
+                placeholder="Min"
+                (keydown)="onPriceKeyDown($event)"
+                (focusout)="onPriceFocusOut($event, 'min')"
+              />
+            </div>
+            <div>-</div>
+            <div>
+              <input
+                name="maxPrice"
+                id="maxPrice"
+                placeholder="Max"
+                (keydown)="onPriceKeyDown($event)"
+                (focusout)="onPriceFocusOut($event, 'max')"
+              />
+            </div>
           </div>
         </div>
       </div>

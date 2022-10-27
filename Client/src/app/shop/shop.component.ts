@@ -1,4 +1,6 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { delay } from 'rxjs';
 import { IBrand } from '../shared/models/brand';
 import { ICategory } from '../shared/models/category';
 import { IProduct } from '../shared/models/product';
@@ -23,7 +25,10 @@ export class ShopComponent implements OnInit {
     { name: 'Price: High to Low', value: 'priceDesc' },
   ];
 
-  constructor(private shopService: ShopService) {}
+  constructor(
+    private shopService: ShopService,
+    private currencyPipe: CurrencyPipe
+  ) {}
 
   ngOnInit(): void {
     this.getProducts();
@@ -155,5 +160,60 @@ export class ShopComponent implements OnInit {
 
     const body = document.querySelector('body');
     body.classList.remove('no-overflow');
+  }
+
+  onPriceKeyDown(e: KeyboardEvent) {
+    const allowdKeys = [
+      '1',
+      '2',
+      '3',
+      '4',
+      '5',
+      '6',
+      '7',
+      '8',
+      '9',
+      '0',
+      'Backspace',
+      'Tab',
+    ];
+
+    if (!allowdKeys.includes(e.key)) {
+      return false;
+    }
+  }
+
+  onPriceFocusOut(e: FocusEvent, priceTarget: 'min' | 'max') {
+    const target = e.target as HTMLInputElement;
+    const currency = this.currencyPipe.transform(
+      target.value,
+      'USD',
+      'symbol',
+      '1.0-0'
+    );
+    target.value = currency;
+
+    var price = Number(currency?.replace(/[^0-9.-]+/g, ''));
+    priceTarget === 'min'
+      ? (this.shopParams.minPrice = price)
+      : (this.shopParams.maxPrice = price);
+
+    this.getProducts();
+  }
+
+  savePriceChanged(e: FocusEvent, priceTarget: 'min' | 'max') {
+    const target = e.target as HTMLInputElement;
+    const currency = this.currencyPipe.transform(
+      target.value,
+      'USD',
+      'symbol',
+      '1.0-0'
+    );
+    target.value = currency;
+
+    var price = Number(currency?.replace(/[^0-9.-]+/g, ''));
+    priceTarget === 'min'
+      ? (this.shopParams.minPrice = price)
+      : (this.shopParams.maxPrice = price);
   }
 }

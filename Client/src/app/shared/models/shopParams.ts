@@ -5,4 +5,6 @@ export class ShopParams {
   pageNumber = 1;
   pageSize = 10;
   search: string;
+  minPrice: number;
+  maxPrice: number;
 }

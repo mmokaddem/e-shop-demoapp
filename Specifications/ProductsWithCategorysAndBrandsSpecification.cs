@@ -18,6 +18,9 @@ namespace e_shop.Specifications
             )
             &&
             (!productParams.CategoryId.HasValue || x.ProductCategory.Id == productParams.CategoryId)
+            && (productParams.MinPrice == null || x.Price >= productParams.MinPrice)
+            && (productParams.MaxPrice == null || x.Price <= productParams.MaxPrice)
+
         )
     {
       AddInclude(x => x.ProductCategory);
